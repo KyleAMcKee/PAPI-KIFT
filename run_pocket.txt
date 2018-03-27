@@ -1,0 +1,1 @@
+pocketsphinx_continuous -inmic yes -lm dict.lm -dict dict.dic
