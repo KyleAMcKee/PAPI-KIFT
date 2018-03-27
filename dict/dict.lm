@@ -1,0 +1,248 @@
+Language model created by QuickLM on Mon Mar 26 20:34:21 EDT 2018
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 55 sentences and 58 words
+
+\data\
+ngram 1=58
+ngram 2=111
+ngram 3=56
+
+\1-grams:
+-0.7808 </s> -0.3010
+-0.7808 <s> -0.2224
+-2.5211 A.M. -0.2224
+-2.5211 ADIOS -0.2224
+-2.5211 ALARM -0.2224
+-2.5211 BUTTERHORN -0.2224
+-2.5211 CAGE -0.2224
+-2.5211 CONNECTED -0.2224
+-2.5211 DAGOBERTO -0.2224
+-2.5211 DESPACITO -0.2224
+-2.5211 DOGS -0.2224
+-2.5211 EIGHT -0.2224
+-2.5211 ELEVEN -0.2224
+-2.5211 EMAIL -0.2224
+-2.5211 EVENTS -0.2224
+-2.5211 EXIT -0.2224
+-2.5211 FIVE -0.2224
+-2.5211 FOUR -0.2224
+-2.5211 GOODBYE -0.2224
+-2.5211 GOOGLE -0.2224
+-2.5211 HARRISON -0.2224
+-2.5211 HELLO -0.2224
+-2.5211 HISTORY -0.2224
+-2.5211 HOLA -0.2224
+-2.5211 JOKE -0.2224
+-2.5211 KYLE -0.2224
+-2.5211 LET -0.2224
+-2.5211 LIGHTS -0.2224
+-2.5211 MUSIC -0.2224
+-2.5211 NICK -0.2224
+-2.5211 NINE -0.2224
+-2.5211 O'CLOCK -0.2224
+-2.5211 OFF -0.2224
+-2.5211 ON -0.2224
+-2.5211 ONE -0.2224
+-2.5211 OUT -0.2224
+-2.5211 P.M. -0.2224
+-2.5211 PASA -0.2224
+-2.5211 QUE -0.2997
+-2.5211 QUIT -0.2224
+-2.5211 SEARCH -0.2224
+-2.5211 SEND -0.2224
+-2.5211 SET -0.2224
+-2.5211 SEVEN -0.2224
+-2.5211 SHREK -0.2224
+-2.5211 SIX -0.2224
+-2.5211 TEN -0.2224
+-2.5211 TEXT -0.2224
+-2.5211 THE -0.2224
+-2.5211 THIRTY -0.2224
+-2.5211 THREE -0.2224
+-2.5211 TIMER -0.2224
+-2.5211 TRAFFIC -0.2224
+-2.5211 TURN -0.2224
+-2.5211 TWELVE -0.2224
+-2.5211 TWO -0.2224
+-2.5211 WEATHER -0.2224
+-2.5211 WHO -0.2224
+
+\2-grams:
+-2.0414 <s> A.M. 0.0000
+-2.0414 <s> ADIOS 0.0000
+-2.0414 <s> ALARM 0.0000
+-2.0414 <s> BUTTERHORN 0.0000
+-2.0414 <s> CAGE 0.0000
+-2.0414 <s> CONNECTED 0.0000
+-2.0414 <s> DAGOBERTO 0.0000
+-2.0414 <s> DESPACITO 0.0000
+-2.0414 <s> DOGS 0.0000
+-2.0414 <s> EIGHT 0.0000
+-2.0414 <s> ELEVEN 0.0000
+-2.0414 <s> EMAIL 0.0000
+-2.0414 <s> EVENTS 0.0000
+-2.0414 <s> EXIT 0.0000
+-2.0414 <s> FIVE 0.0000
+-2.0414 <s> FOUR 0.0000
+-2.0414 <s> GOODBYE 0.0000
+-2.0414 <s> GOOGLE 0.0000
+-2.0414 <s> HARRISON 0.0000
+-2.0414 <s> HELLO 0.0000
+-2.0414 <s> HISTORY 0.0000
+-2.0414 <s> HOLA 0.0000
+-2.0414 <s> JOKE 0.0000
+-2.0414 <s> KYLE 0.0000
+-2.0414 <s> LET 0.0000
+-2.0414 <s> LIGHTS 0.0000
+-2.0414 <s> MUSIC 0.0000
+-2.0414 <s> NICK 0.0000
+-2.0414 <s> NINE 0.0000
+-2.0414 <s> O'CLOCK 0.0000
+-2.0414 <s> OFF 0.0000
+-2.0414 <s> ON 0.0000
+-2.0414 <s> ONE 0.0000
+-2.0414 <s> OUT 0.0000
+-2.0414 <s> P.M. 0.0000
+-2.0414 <s> QUE 0.0000
+-2.0414 <s> QUIT 0.0000
+-2.0414 <s> SEARCH 0.0000
+-2.0414 <s> SEND 0.0000
+-2.0414 <s> SET 0.0000
+-2.0414 <s> SEVEN 0.0000
+-2.0414 <s> SHREK 0.0000
+-2.0414 <s> SIX 0.0000
+-2.0414 <s> TEN 0.0000
+-2.0414 <s> TEXT 0.0000
+-2.0414 <s> THE 0.0000
+-2.0414 <s> THIRTY 0.0000
+-2.0414 <s> THREE 0.0000
+-2.0414 <s> TIMER 0.0000
+-2.0414 <s> TRAFFIC 0.0000
+-2.0414 <s> TURN 0.0000
+-2.0414 <s> TWELVE 0.0000
+-2.0414 <s> TWO 0.0000
+-2.0414 <s> WEATHER 0.0000
+-2.0414 <s> WHO 0.0000
+-0.3010 A.M. </s> -0.3010
+-0.3010 ADIOS </s> -0.3010
+-0.3010 ALARM </s> -0.3010
+-0.3010 BUTTERHORN </s> -0.3010
+-0.3010 CAGE </s> -0.3010
+-0.3010 CONNECTED </s> -0.3010
+-0.3010 DAGOBERTO </s> -0.3010
+-0.3010 DESPACITO </s> -0.3010
+-0.3010 DOGS </s> -0.3010
+-0.3010 EIGHT </s> -0.3010
+-0.3010 ELEVEN </s> -0.3010
+-0.3010 EMAIL </s> -0.3010
+-0.3010 EVENTS </s> -0.3010
+-0.3010 EXIT </s> -0.3010
+-0.3010 FIVE </s> -0.3010
+-0.3010 FOUR </s> -0.3010
+-0.3010 GOODBYE </s> -0.3010
+-0.3010 GOOGLE </s> -0.3010
+-0.3010 HARRISON </s> -0.3010
+-0.3010 HELLO </s> -0.3010
+-0.3010 HISTORY </s> -0.3010
+-0.3010 HOLA </s> -0.3010
+-0.3010 JOKE </s> -0.3010
+-0.3010 KYLE </s> -0.3010
+-0.3010 LET </s> -0.3010
+-0.3010 LIGHTS </s> -0.3010
+-0.3010 MUSIC </s> -0.3010
+-0.3010 NICK </s> -0.3010
+-0.3010 NINE </s> -0.3010
+-0.3010 O'CLOCK </s> -0.3010
+-0.3010 OFF </s> -0.3010
+-0.3010 ON </s> -0.3010
+-0.3010 ONE </s> -0.3010
+-0.3010 OUT </s> -0.3010
+-0.3010 P.M. </s> -0.3010
+-0.3010 PASA </s> -0.3010
+-0.3010 QUE PASA 0.0000
+-0.3010 QUIT </s> -0.3010
+-0.3010 SEARCH </s> -0.3010
+-0.3010 SEND </s> -0.3010
+-0.3010 SET </s> -0.3010
+-0.3010 SEVEN </s> -0.3010
+-0.3010 SHREK </s> -0.3010
+-0.3010 SIX </s> -0.3010
+-0.3010 TEN </s> -0.3010
+-0.3010 TEXT </s> -0.3010
+-0.3010 THE </s> -0.3010
+-0.3010 THIRTY </s> -0.3010
+-0.3010 THREE </s> -0.3010
+-0.3010 TIMER </s> -0.3010
+-0.3010 TRAFFIC </s> -0.3010
+-0.3010 TURN </s> -0.3010
+-0.3010 TWELVE </s> -0.3010
+-0.3010 TWO </s> -0.3010
+-0.3010 WEATHER </s> -0.3010
+-0.3010 WHO </s> -0.3010
+
+\3-grams:
+-0.3010 <s> A.M. </s>
+-0.3010 <s> ADIOS </s>
+-0.3010 <s> ALARM </s>
+-0.3010 <s> BUTTERHORN </s>
+-0.3010 <s> CAGE </s>
+-0.3010 <s> CONNECTED </s>
+-0.3010 <s> DAGOBERTO </s>
+-0.3010 <s> DESPACITO </s>
+-0.3010 <s> DOGS </s>
+-0.3010 <s> EIGHT </s>
+-0.3010 <s> ELEVEN </s>
+-0.3010 <s> EMAIL </s>
+-0.3010 <s> EVENTS </s>
+-0.3010 <s> EXIT </s>
+-0.3010 <s> FIVE </s>
+-0.3010 <s> FOUR </s>
+-0.3010 <s> GOODBYE </s>
+-0.3010 <s> GOOGLE </s>
+-0.3010 <s> HARRISON </s>
+-0.3010 <s> HELLO </s>
+-0.3010 <s> HISTORY </s>
+-0.3010 <s> HOLA </s>
+-0.3010 <s> JOKE </s>
+-0.3010 <s> KYLE </s>
+-0.3010 <s> LET </s>
+-0.3010 <s> LIGHTS </s>
+-0.3010 <s> MUSIC </s>
+-0.3010 <s> NICK </s>
+-0.3010 <s> NINE </s>
+-0.3010 <s> O'CLOCK </s>
+-0.3010 <s> OFF </s>
+-0.3010 <s> ON </s>
+-0.3010 <s> ONE </s>
+-0.3010 <s> OUT </s>
+-0.3010 <s> P.M. </s>
+-0.3010 <s> QUE PASA
+-0.3010 <s> QUIT </s>
+-0.3010 <s> SEARCH </s>
+-0.3010 <s> SEND </s>
+-0.3010 <s> SET </s>
+-0.3010 <s> SEVEN </s>
+-0.3010 <s> SHREK </s>
+-0.3010 <s> SIX </s>
+-0.3010 <s> TEN </s>
+-0.3010 <s> TEXT </s>
+-0.3010 <s> THE </s>
+-0.3010 <s> THIRTY </s>
+-0.3010 <s> THREE </s>
+-0.3010 <s> TIMER </s>
+-0.3010 <s> TRAFFIC </s>
+-0.3010 <s> TURN </s>
+-0.3010 <s> TWELVE </s>
+-0.3010 <s> TWO </s>
+-0.3010 <s> WEATHER </s>
+-0.3010 <s> WHO </s>
+-0.3010 QUE PASA </s>
+
+\end\
