@@ -61,9 +61,19 @@ int main(void)
 		printf("Connected to server\n");
 	else
 		printf("Couldn't connect to server\n");
-
+	system("./listener");
     while(1)
     {
+		//Get string from listener
+		//If string
+		//	if client logic
+		//		pass to client logic handler
+		//	else if server logic
+		//		send to server
+		//		wait for response
+		//	else
+		//		command not valid
+		//	flush send / recv string
         bzero(send_str, 100);
         bzero(recv_str, 100);
         fgets(send_str, 100, stdin);
