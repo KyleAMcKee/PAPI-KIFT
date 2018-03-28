@@ -8,11 +8,13 @@ SET TIMER
 
 TURN ON LIGHTS
 TURN OFF LIGHTS
+#fix off
 
 3. Send email / SMS.
 
 SEND EMAIL
 SEND TEXT(optional)
+#fix text
 
 4. Check events / weather / traffic.
 
@@ -22,7 +24,8 @@ CHECK TRAFFIC
 
 5. Who is connected?
 
-WHO AM I
+WHO AM I(WHO AM)
+#fix who
 
 6. Where is (user) connected?
 
@@ -48,6 +51,7 @@ GOODBYE, EXIT, QUIT
 BUTTERHORN
 SHREK
 WHO LET THE DOGS OUT(LET DOGS OUT)
+#fix
 HOLA
 DESPACITO
 ADIOS
