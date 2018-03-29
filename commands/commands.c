@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:14:10 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/29 16:08:31 by nwang            ###   ########.fr       */
+/*   Updated: 2018/03/29 16:32:59 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@ void		commands3(int com)
 {
 	if (com == 23)
 		despacito();
-	else if (com == 24)
-		adios();
 	else if (com == 25)
 		fuck_you();
-	else if (com == 26)
+	else if (com == 24)
 		joke();
 	else if (com == 13)
 		nic_cage();

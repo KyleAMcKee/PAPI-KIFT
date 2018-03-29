@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:38:43 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/29 14:50:21 by nwang            ###   ########.fr       */
+/*   Updated: 2018/03/29 16:33:16 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,6 @@ void	despacito(void)
 	system("say -v Juan Despacito Quiero respirar tu cuello despacito Deja que te diga cosas al oído Para que te acuerdes si no estás conmigo");
 	system("open https://www.youtube.com/watch?v=kJQP7kiw5Fk");
 }
-
-void	adios(void)
-{
-	system("say -v Juan Adios, senorita");
-}
-
 
 void	fuck_you(void)
 {
