@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:38:43 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/28 23:27:35 by nwang            ###   ########.fr       */
+/*   Updated: 2018/03/29 01:11:25 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,13 @@ void	lights_off(void)
 		i++;
 	}
 }
-/*
+
 void	send_email(void)
 {
-
+	//ts2 ("Sending email, hombre")
+	system("sh email");
 }
-*/
+
 void	check_events(void)
 {
 //	t2s ("Here are some events near Fremont");
