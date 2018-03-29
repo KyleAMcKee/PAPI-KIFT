@@ -1,2 +1,0 @@
-pocketsphinx_continuous -hmm en-us-papi -lm dict.lm -dict dict.dic -inmic yes
-pocketsphinx_continuous -inmic yes -lm dict.lm -dict dict.dic
