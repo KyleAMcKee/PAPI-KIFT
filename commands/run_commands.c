@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:38:43 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/29 16:07:38 by nwang            ###   ########.fr       */
+/*   Updated: 2018/03/29 16:52:39 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ void	where_kyle(void)
 	system("ruby hind.rb mckee.txt");
 }
 
-int		main(void)
+void	where_kyle(void)
 {
-	where_kyle();
-	return(0);
+	system("say -v Buenos dias, chica, como estas");
 }

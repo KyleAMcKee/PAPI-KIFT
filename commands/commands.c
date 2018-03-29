@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:14:10 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/29 16:32:59 by nwang            ###   ########.fr       */
+/*   Updated: 2018/03/29 16:51:47 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void		commands3(int com)
 		que_pasa();
 	else if (com == 11)
 		kifte();
+	else if (com == 26)
+		hello();
 }
 
 void		commands2(int com)
