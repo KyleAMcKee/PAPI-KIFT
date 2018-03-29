@@ -26,8 +26,10 @@ int main(void)
 	id = fork();
 	if (id == 0)
 		execvp("./exec", NULL);
+	id2 = fork();
+	if (id2 == 0)
+		execvp("./listener", NULL);
 	sleep(3);
-
 	/*
 	 ** Create a socket, use IPv4 (AF_INET), and specify the socket type (SOCK_STREAM)
 	 ** Zero out the struct and use IPv4
@@ -40,7 +42,7 @@ int main(void)
 	/*
 	 ** Get port from user and verify that the port is valid
 	 */
-
+	fopen("speech.txt", "w+");
 	printf("Gimme a port, plz: ");
 	fgets(port_str, 100, stdin);
 	port = strtol(port_str, &ret_ptr, 10);
@@ -48,6 +50,11 @@ int main(void)
 	if (id2 == 0)
 		execvp("./listener", NULL);
 	sleep(3);
+
+
+	/*printf("Gimme a port, plz: ");
+	fgets(port_str, 100, stdin);
+	port = strtol(port_str, &ret_ptr, 10);*/
 	while (port == 0)
 	{
 		printf("Invalid input: %sInput as integer only try again: ", port_str);
@@ -76,9 +83,22 @@ int main(void)
 	else
 		printf("Couldn't connect to server\n");
 	char *command;
-	command = NULL;
+	//fp = fopen("speech.txt", "r");
+	fopen("speech.txt", "w+");
+	//printf("HERE\n");
 	while(1)
 	{
+		/*if (fgets(send_str, 50, stdin))
+		{
+			printf("com: %s\n", send_str);
+		}*/
+		if (parser(&command) == 1)
+		{
+			fopen("speech.txt", "w+");
+			printf("HOLA\n");
+			free(command);
+			command = NULL;
+		}
 		//Get string from listener
 		//If string
 		//	if client logic
@@ -89,7 +109,7 @@ int main(void)
 		//	else
 		//		command not valid
 		//	flush send / recv string
-		if (parser(&command) == 1)
+	/*	if (parser(&command) == 1)
 		{
 			if (command)
 			{
@@ -102,6 +122,6 @@ int main(void)
 				free(command);
 				command = NULL;
 			}
-		}
+		}*/
 	}
 }
