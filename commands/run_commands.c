@@ -6,9 +6,11 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:38:43 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/29 14:35:16 by nwang            ###   ########.fr       */
+/*   Updated: 2018/03/29 16:07:38 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 void	set_alarm(void)
 {
@@ -16,8 +18,25 @@ void	set_alarm(void)
 	system("open http://onlineclock.net/");
 }
 
-void	set_timer(void):
+void	set_timer(void)
 {
 	system("say -v Juan tick tock");
 	system("open http://timer.onlineclock.net/");
+}
+
+void	kifte(void)
+{
+	system("say -v Juan Kiftehh Kiftehh Kiftehh, Si, si, si");
+}
+
+void	where_kyle(void)
+{
+	system("say -v Juan Donde esta senor mckee");
+	system("ruby hind.rb mckee.txt");
+}
+
+int		main(void)
+{
+	where_kyle();
+	return(0);
 }

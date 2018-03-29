@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:14:10 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/28 22:38:55 by nwang            ###   ########.fr       */
+/*   Updated: 2018/03/29 16:08:31 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,20 @@ void		commands3(int com)
 		fuck_you();
 	else if (com == 26)
 		joke();
-	else if (com == 27)
+	else if (com == 13)
 		nic_cage();
-	else if (com == 28)
+	else if (com == 12)
 		que_pasa();
+	else if (com == 11)
+		kifte();
 }
 
 void		commands2(int com)
 {
-	if (com == 12)
-		where_harrison();
-	else if (com == 13)
-		where_nick();
 	else if (com == 14)
 		play_music();
 	else if (com == 15)
-		google();//search and google, blank google.com
+		google();
 	else if (com == 16)
 		google_despacito();
 	else if (com == 17)
@@ -76,8 +74,6 @@ void		commands(int com)
 		where_am_i();
 	else if (com == 10)
 		where_kyle();
-	else if (com == 11)
-		where_dago();
 	else
 		commands2(com);
 }
