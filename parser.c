@@ -17,17 +17,28 @@ int execute_command(char *str)
 	return(1);
 }
 
-int parser(char **command)
+int validcommand(char *line)
+{
+	int i;
+
+	i = -1;
+	while (line[++i])
+	{
+		if ((line[i] >= 65 && line[i] <= 90) || (line[i] >= 97 && line[i] <= 122))
+			return (1);
+	}
+	return (0);
+}
+
+int parser(int fd, char **command)
 {
 	char *line;
-	int fd;
 	int server;
 
-	fd = open("speech.txt", O_RDONLY);
 	line = NULL;
 	server = 0;
 	get_next_line(fd, &line);
-	if (line)
+	if (line && validcommand(line))
 	{
 		ft_putstr("command: ");
 		ft_putstr(line);
@@ -35,12 +46,7 @@ int parser(char **command)
 	//	server = execute_command(line);
 		*command = line;
 		server = 1;
-		fopen("speech.txt", "w+");
+//		fopen("speech.txt", "w");
 	}
-	close(fd);
-//	ft_putnbr(server);
-//	ft_putchar('\n');
-	if (!*command)
-		return (0);
-	return (server ? 1 : 0);
+	return (server);
 }

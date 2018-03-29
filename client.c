@@ -4,11 +4,21 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <arpa/inet.h>
 #include "libft/libft.h"
 
-int	parser(char **command);
+int	parser(int fd, char **command);
+
+void	putcommand_insendstr(char *cmd, char send_str[])
+{
+	int i;
+	int j;
+
+	i = -1;
+	j = 0;
+	while (cmd[++i])
+		send_str[j++] = cmd[i];
+}
 
 int main(void)
 {
@@ -20,12 +30,12 @@ int main(void)
 	struct sockaddr_in info;
 	int	port;
 	int success;
-	pid_t id;
+//	pid_t id;
 	pid_t id2;
 
-	id = fork();
+/*	id = fork();
 	if (id == 0)
-		execvp("./exec", NULL);
+		execvp("./exec", NULL);*/
 	id2 = fork();
 	if (id2 == 0)
 		execvp("./listener", NULL);
@@ -83,22 +93,34 @@ int main(void)
 	else
 		printf("Couldn't connect to server\n");
 	char *command;
-	//fp = fopen("speech.txt", "r");
-	fopen("speech.txt", "w+");
-	//printf("HERE\n");
+	int fd;
+	fopen("speech.txt", "w");
+	command = NULL;
+	fd = open("speech.txt", O_RDONLY);
 	while(1)
 	{
+		if (parser(fd, &command) == 1)
+		{
+			bzero(send_str, 100);
+			putcommand_insendstr(command, send_str);
+			bzero(recv_str, 100);
+			printf("client command being sent send_str: %s\n",  send_str);
+			send(comm_fd, send_str, strlen(send_str), 0);
+			recv(comm_fd, recv_str, 100, 0);
+			printf("server response: %s\n", recv_str);
+			ft_strdel(&command);
+		}
+//		ft_putstr("NINGUUU");
+//		fopen("speech.txt", "w");
 		/*if (fgets(send_str, 50, stdin))
 		{
 			printf("com: %s\n", send_str);
 		}*/
-		if (parser(&command) == 1)
+/*		if (parser(&command) == 1)
 		{
-			fopen("speech.txt", "w+");
-			printf("HOLA\n");
 			free(command);
 			command = NULL;
-		}
+		}*/
 		//Get string from listener
 		//If string
 		//	if client logic
@@ -109,19 +131,5 @@ int main(void)
 		//	else
 		//		command not valid
 		//	flush send / recv string
-	/*	if (parser(&command) == 1)
-		{
-			if (command)
-			{
-				//bzero(send_str, 100);
-				bzero(recv_str, 100);
-				printf("client com: %s\n",  command);
-				send(comm_fd, "1", strlen("1") + 1, 0);
-				recv(comm_fd, recv_str, 100, 0);
-				printf("%s\n", recv_str);
-				free(command);
-				command = NULL;
-			}
-		}*/
 	}
 }

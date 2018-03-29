@@ -5,6 +5,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include "libft/libft.h"
  
 int main(void)
 {
@@ -67,17 +68,22 @@ int main(void)
 	** While loop constantly checks for information being sent by client and replies accordingly
 	*/
 
-	int command;
+//	int command;
     while (1)
     { 
         bzero(str, 100);
        	recv(comm_fd, str, 100, 0);
-		if (strlen(str))
-			command = atoi(str);
+//		if (strlen(str))
+//			command = atoi(str);
 		//if (command == 1)
 		//	system("open https://www.google.com");
 		//if (strcmp(str, "\n") != 0)
-		//	printf("String received: %s", str);
+		if (strlen(str) > 0)
+		{
+			ft_putstr("String received in server: ");
+			ft_putstr(str);
+			ft_putchar('\n');
+		}
 		//if (strcmp(str, "ping\n") == 0)
        // 	send(comm_fd, "pong\npong\n", 11, 0);
 	//	else if (strcmp(str, "shutdown\n") == 0)
@@ -86,8 +92,7 @@ int main(void)
 //			close(comm_fd);
 //			exit(1);
 //		}
-		else
-			send(comm_fd, str, strlen(str), 0);
-		command = 0;
+		send(comm_fd, str, strlen(str), 0);
+//		command = 0;
 	}
 }
