@@ -1,0 +1,61 @@
+1. Set an alarm / timer.
+
+SET ALARM
+SET TIMER
+#at specific time(optional/in progress)
+
+2. Turn on / off lights.
+
+TURN ON LIGHTS
+TURN OFF LIGHTS
+#fix off
+
+3. Send email / SMS.
+
+SEND EMAIL
+SEND TEXT(optional)
+#fix text
+
+4. Check events / weather / traffic.
+
+CHECK WEATHER
+CHECK EVENTS
+CHECK TRAFFIC
+
+5. Who is connected?
+
+WHO AM I(WHO AM)
+#fix who
+
+6. Where is (user) connected?
+
+WHERE AM I CONNECTED
+WHERE (NICK, KYLE, DAGOBERTO, HARRISON) CONNECTED
+
+7. Play music.
+
+PLAY MUSIC
+
+8. Search the web for (term).
+
+SEARCH
+GOOGLE (TERM OR JUST PAGE)
+
+9. Check history.
+
+CHECK HISTORY
+
+BONUS/EASTEREGGS
+
+GOODBYE, EXIT, QUIT
+BUTTERHORN
+SHREK
+WHO LET THE DOGS OUT(LET DOGS OUT)
+#fix
+HOLA
+DESPACITO
+ADIOS
+FUCK YOU(WATCH YOUR FUKCKING MOUTH)
+JOKE
+NICK CAGE
+QUE PASA
