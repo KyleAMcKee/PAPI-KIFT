@@ -67,21 +67,27 @@ int main(void)
 	** While loop constantly checks for information being sent by client and replies accordingly
 	*/
 
+	int command;
     while (1)
     { 
         bzero(str, 100);
        	recv(comm_fd, str, 100, 0);
-		if (strcmp(str, "\n") != 0)
-			printf("String received: %s", str);
-		if (strcmp(str, "ping\n") == 0)
-        	send(comm_fd, "pong\npong\n", 11, 0);
-		else if (strcmp(str, "shutdown\n") == 0)
-		{
-			printf("Shutting down server and closing connection\n");
-			close(comm_fd);
-			exit(1);
-		}
-		else 
-			send(comm_fd, "Give me a ping plz\n", 37, 0);
+		if (strlen(str))
+			command = atoi(str);
+		//if (command == 1)
+		//	system("open https://www.google.com");
+		//if (strcmp(str, "\n") != 0)
+		//	printf("String received: %s", str);
+		//if (strcmp(str, "ping\n") == 0)
+       // 	send(comm_fd, "pong\npong\n", 11, 0);
+	//	else if (strcmp(str, "shutdown\n") == 0)
+//		{
+//			printf("Shutting down server and closing connection\n");
+//			close(comm_fd);
+//			exit(1);
+//		}
+		else
+			send(comm_fd, str, strlen(str), 0);
+		command = 0;
 	}
 }

@@ -6,34 +6,48 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <arpa/inet.h>
- 
+#include "libft/libft.h"
+
+int	parser(char **command);
+
 int main(void)
 {
-    int comm_fd;
-    char send_str[100];
-    char recv_str[100];
+	int comm_fd;
+	char send_str[100];
+	char recv_str[100];
 	char port_str[100];
 	char *ret_ptr;
-    struct sockaddr_in info;
+	struct sockaddr_in info;
 	int	port;
 	int success;
- 
-	/*
-	** Create a socket, use IPv4 (AF_INET), and specify the socket type (SOCK_STREAM)
-	** Zero out the struct and use IPv4
-	*/
+	pid_t id;
+	pid_t id2;
 
-    comm_fd = socket(AF_INET, SOCK_STREAM, 0);
-    bzero(&info, sizeof(info));
-    info.sin_family = AF_INET;
-	
+	id = fork();
+	if (id == 0)
+		execvp("./exec", NULL);
+	sleep(3);
+
 	/*
-	** Get port from user and verify that the port is valid
-	*/
+	 ** Create a socket, use IPv4 (AF_INET), and specify the socket type (SOCK_STREAM)
+	 ** Zero out the struct and use IPv4
+	 */
+
+	comm_fd = socket(AF_INET, SOCK_STREAM, 0);
+	bzero(&info, sizeof(info));
+	info.sin_family = AF_INET;
+
+	/*
+	 ** Get port from user and verify that the port is valid
+	 */
 
 	printf("Gimme a port, plz: ");
 	fgets(port_str, 100, stdin);
 	port = strtol(port_str, &ret_ptr, 10);
+	id2 = fork();
+	if (id2 == 0)
+		execvp("./listener", NULL);
+	sleep(3);
 	while (port == 0)
 	{
 		printf("Invalid input: %sInput as integer only try again: ", port_str);
@@ -50,20 +64,21 @@ int main(void)
 	printf("That's a great port! Let's connect!\n");
 
 	/*
-	**	Add port to struct along with IP in binary format
-	**	If connection was successful let user know and allow sending of information
-	*/
+	 **	Add port to struct along with IP in binary format
+	 **	If connection was successful let user know and allow sending of information
+	 */
 
-    info.sin_port = htons(port);
-    inet_pton(AF_INET, "127.0.0.1", &(info.sin_addr));
-    success = connect(comm_fd, (struct sockaddr*)&info, sizeof(info));
- 	if (success == 0)
+	info.sin_port = htons(port);
+	inet_pton(AF_INET, "127.0.0.1", &(info.sin_addr));
+	success = connect(comm_fd, (struct sockaddr*)&info, sizeof(info));
+	if (success == 0)
 		printf("Connected to server\n");
 	else
 		printf("Couldn't connect to server\n");
-	system("./listener");
-    while(1)
-    {
+	char *command;
+	command = NULL;
+	while(1)
+	{
 		//Get string from listener
 		//If string
 		//	if client logic
@@ -74,12 +89,19 @@ int main(void)
 		//	else
 		//		command not valid
 		//	flush send / recv string
-        bzero(send_str, 100);
-        bzero(recv_str, 100);
-        fgets(send_str, 100, stdin);
-        send(comm_fd, send_str, strlen(send_str) + 1, 0);
-        recv(comm_fd, recv_str, 100, 0);
-        printf("%s", recv_str);
-    }
- 
+		if (parser(&command) == 1)
+		{
+			if (command)
+			{
+				//bzero(send_str, 100);
+				bzero(recv_str, 100);
+				printf("client com: %s\n",  command);
+				send(comm_fd, "1", strlen("1") + 1, 0);
+				recv(comm_fd, recv_str, 100, 0);
+				printf("%s\n", recv_str);
+				free(command);
+				command = NULL;
+			}
+		}
+	}
 }
