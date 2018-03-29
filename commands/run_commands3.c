@@ -6,64 +6,40 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:38:43 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/28 23:27:35 by nwang            ###   ########.fr       */
+/*   Updated: 2018/03/28 23:35:28 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 
-void	lights_on(void)
+void	check_traffic(void)
 {
-	int i;
-	
-	i = 0;
-//	t2s ("Turning lights on");
-	while (i < 16)
-	{
-		system("sh turnonlights");
-		i++;
-	}
+//	t2s ("Here is the traffic in your area, ay carumba!");
+	system("open https://www.google.com/maps/place/Fremont,+CA/@37.5293037,-122.1485555,11z/data=!3m1!4b1!4m5!3m4!1s0x808fbf46b7e8caf7:0x8ada313b89d888d4!8m2!3d37.5482697!4d-121.9885719!5m1!1e1");
 }
 
-void	lights_off(void)
+/*void	lights_off(void)
 {
-	int i;
-	
-	i = 0;
-//	t2s ("Turning lights off");
-	while (i < 16)
-	{
-		system("sh turnofflights");
-		i++;
-	}
 }
-/*
+
 void	send_email(void)
 {
 
 }
-*/
-void	check_events(void)
+
+void	set_alarm(void)
 {
-//	t2s ("Here are some events near Fremont");
-	system("open https://www.eventbrite.com/d/ca--fremont/events/");	
+
 }
 
-void	check_weather(void)
+void	set_alarm(void)
 {
-//	t2s ("Here is the weather, muy caliente");
-	system("open https://weather.com/weather/tenday/l/94555:4:US");
-}
+
+}*/
 
 int		main(void)
 {
-	lights_on();
-	check_events();
-	sleep(3);
-	lights_off();
-	check_weather();
-	sleep(3);
-	lights_on();
+	check_traffic();
 	return(0);
 }
