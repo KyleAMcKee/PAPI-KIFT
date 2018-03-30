@@ -110,7 +110,7 @@ int main(void)
 	cmd_d->cmd = NULL;
 	cmd_d->papi = 0;
 	fopen("speech.txt", "w");
-	system("open http://localhost:3871/index.php");
+	system("open http://localhost:3873/index.php");
 	while (1)
 	{
 		parser(fd, cmd_d);
@@ -127,6 +127,7 @@ int main(void)
 			recv(comm_fd, recv_str, 100, 0);
 			printf("server response: %s\n", recv_str);
 			ft_putstr_fd(cmd_d->cmd, fd2);
+			write(fd2, "\n", 1);
 			ft_strdel(&cmd_d->cmd);
 			cmd_d->cmdid = 0;
 			cmd_d->papi = 0;
