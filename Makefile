@@ -1,16 +1,18 @@
 CLIENT = client
 SERVER = server
+LISTENER = listener
 LIBFT = ./libft/libft.a
-CLIENTFILES = 	./client.c\
-				./parser.c
+CLIENTFILES = 	./client.c \
+				./parser.c 
 SERVERFILES = 	./server.c
+LISTENFILES =	./listener.c
 LIBDIR = ./libft/
 INCDIR = ./includes/
 SRC = $(wildcard $(SRCDIR)*.c)
 OBJ = $(patsubst $(SRCDIR)%.c, objs/%.o, $(SRC))
 FLAGS = -Wall -Werror -Wextra
 
-all: $(SERVER)
+all: $(LIBFT) $(SERVER) $(CLIENT) $(LISTENER)
 
 $(LIBFT):
 	@make -C $(LIBDIR)
@@ -19,9 +21,13 @@ $(CLIENT):
 	@gcc $(FLAGS) $(CLIENTFILES) $(LIBFT) -o $(CLIENT)
 	@echo "PAPI CLIENT COMPILED!"
 
-$(SERVER): $(LIBFT) $(CLIENT)
+$(SERVER):
 	@gcc $(FLAGS) $(SERVERFILES) $(LIBFT) -o $(SERVER)
 	@echo "PAPI SERVER COMPILED!"
+
+$(LISTENER):
+	@gcc $(FLAGS) $(LISTENFILES) $(LIBFT) -o $(LISTENER)
+	@echo "PAPI LISTENER COMPILED!"
 
 clean:
 	@rm -rf $(OBJDIR)
