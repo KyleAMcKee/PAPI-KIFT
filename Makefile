@@ -12,14 +12,14 @@ FLAGS = -Wall -Werror -Wextra
 
 all: $(SERVER)
 
-$(LIB):
+$(LIBFT):
 	@make -C $(LIBDIR)
 
-$(CLIENT): $(LIB)
+$(CLIENT):
 	@gcc $(FLAGS) $(CLIENTFILES) $(LIBFT) -o $(CLIENT)
 	@echo "PAPI CLIENT COMPILED!"
 
-$(SERVER): $(CLIENT)
+$(SERVER): $(LIBFT) $(CLIENT)
 	@gcc $(FLAGS) $(SERVERFILES) $(LIBFT) -o $(SERVER)
 	@echo "PAPI SERVER COMPILED!"
 
