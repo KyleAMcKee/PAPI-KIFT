@@ -24,6 +24,8 @@ void		commands3(int com)
 		que_pasa();
 	else if (com == 11)
 		kifte();
+	if (com == 26)
+		set_timer();
 }
 
 void		commands2(int com)

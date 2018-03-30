@@ -18,6 +18,8 @@ void	is_command_3(t_cmd *cmd_d, char *user_in)
 		return (set_commandinfo(cmd_d, 12, "QUE PASA"));
     if (ft_strstr("KIFTE", user_in))
 		return (set_commandinfo(cmd_d, 11, "KIFTE"));
+    if (ft_strstr("SET TIMER", user_in))
+		return (set_commandinfo(cmd_d, 26, "SET TIMER"));
     else
 		return (is_command_3(cmd_d, user_in));
 }
