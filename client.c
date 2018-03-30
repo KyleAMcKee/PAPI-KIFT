@@ -110,6 +110,7 @@ int main(void)
 	cmd_d->cmd = NULL;
 	cmd_d->papi = 0;
 	fopen("speech.txt", "w");
+	system("open http://localhost:3871/index.php");
 	while (1)
 	{
 		parser(fd, cmd_d);
