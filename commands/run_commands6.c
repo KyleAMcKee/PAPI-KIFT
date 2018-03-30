@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:38:43 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/29 01:08:22 by nwang            ###   ########.fr       */
+/*   Updated: 2018/03/29 17:47:56 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,9 @@ void	nic_cage(void)
 
 void	que_pasa(void)
 {
-//	t2s ("Nothing much, what's up with you dog");
-}
-/*
-void	adios(void)
-{
-//	ts2 ("BUTTTTERRRHOOOOORRRRRNNNNN!!!!!");
-	system("open https://www.google.com/search?q=butterhorn&tbm=isch");
-	system("play butterhorn.mp3");
+	system("say -v Juan Nothing much, what's up with you dog");
 }
 
-
-void	fuck_you(void)
-{
-//	t2s ("Search away mi amigo");
-	system("open https://www.google.com/");
-}
-*/
 int		main(void)
 {
 	nic_cage();

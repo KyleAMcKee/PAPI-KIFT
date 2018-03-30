@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:38:43 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/29 16:52:39 by nwang            ###   ########.fr       */
+/*   Updated: 2018/03/29 17:49:26 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,4 @@ void	where_kyle(void)
 {
 	system("say -v Juan Donde esta senor mckee");
 	system("ruby hind.rb mckee.txt");
-}
-
-void	where_kyle(void)
-{
-	system("say -v Buenos dias, chica, como estas");
 }

@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:38:43 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/29 16:33:16 by nwang            ###   ########.fr       */
+/*   Updated: 2018/03/29 17:46:46 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,4 @@ void	despacito(void)
 void	fuck_you(void)
 {
 	system("say -v Juan Ay, watch your fucking mouth puta");
-}
-
-int		main(void)
-{
-	fuck_you();
-	return(0);
 }
