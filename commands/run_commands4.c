@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:38:43 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/29 14:44:08 by nwang            ###   ########.fr       */
+/*   Updated: 2018/03/29 18:51:19 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	google_despacito(void)
 {
-	system ("say -v Juan Ay, Ay, Ay, Papi!");
+	system("say -v Juan Ay, Ay, Ay, Papi!");
 	system("open https://www.google.com/search?q=despacito");
 }
 
@@ -37,7 +37,6 @@ void	butterhorn(void)
 	system("open https://www.google.com/search?q=butterhorn&tbm=isch");
 	system("play butterhorn.mp3");
 }
-
 
 void	shrek(void)
 {

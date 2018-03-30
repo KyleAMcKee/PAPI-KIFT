@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:14:10 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/29 17:46:18 by nwang            ###   ########.fr       */
+/*   Updated: 2018/03/29 18:45:29 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void		commands3(int com)
 
 void		commands2(int com)
 {
-	else if (com == 14)
+	if (com == 14)
 		play_music();
 	else if (com == 15)
 		google();

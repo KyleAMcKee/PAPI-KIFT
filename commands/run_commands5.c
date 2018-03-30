@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:38:43 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/29 17:46:46 by nwang            ###   ########.fr       */
+/*   Updated: 2018/03/29 18:54:05 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	let_dogs_out(void)
 
 void	despacito(void)
 {
-	system("say -v Juan Despacito Quiero respirar tu cuello despacito Deja que te diga cosas al oído Para que te acuerdes si no estás conmigo");
+	system("say -v Juan Despacito Quiero respirar tu cuello despacito");
 	system("open https://www.youtube.com/watch?v=kJQP7kiw5Fk");
 }
 
