@@ -6,7 +6,20 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "libft/libft.h"
- 
+
+int validstr(char line[])
+{
+	int i;
+
+	i = -1;
+	while (line[++i])
+	{
+		if ((line[i] >= 65 && line[i] <= 90) || (line[i] >= 97 && line[i] <= 122))
+			return (1);
+	}
+	return (0);
+}
+
 int main(void)
 {
  
@@ -78,7 +91,7 @@ int main(void)
 		//if (command == 1)
 		//	system("open https://www.google.com");
 		//if (strcmp(str, "\n") != 0)
-		if (strlen(str) > 0)
+		if (validstr(str))
 		{
 			ft_putstr("String received in server: ");
 			ft_putstr(str);

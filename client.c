@@ -7,7 +7,14 @@
 #include <arpa/inet.h>
 #include "libft/libft.h"
 
-int	parser(int fd, char **command);
+typedef struct	s_cmd
+{
+	int		cmdid;
+	int		papi;
+	char	*cmd;
+}			t_cmd;
+
+int	parser(int fd, t_cmd *cmd_d);
 
 void	putcommand_insendstr(char *cmd, char send_str[])
 {
@@ -92,35 +99,37 @@ int main(void)
 		printf("Connected to server\n");
 	else
 		printf("Couldn't connect to server\n");
-	char *command;
 	int fd;
-	fopen("speech.txt", "w");
-	command = NULL;
+	int fd2;
+
 	fd = open("speech.txt", O_RDONLY);
-	while(1)
+	fd2 = open("response.txt", O_RDWR | O_TRUNC | O_CREAT);
+	t_cmd *cmd_d;
+	cmd_d = (t_cmd *)malloc(sizeof(t_cmd));
+	cmd_d->cmdid = 0;
+	cmd_d->cmd = NULL;
+	cmd_d->papi = 0;
+	fopen("speech.txt", "w");
+	while (1)
 	{
-		if (parser(fd, &command) == 1)
+		parser(fd, cmd_d);
+		if (cmd_d->cmdid > 0 && cmd_d->papi == 1)
 		{
+			ft_putstr("command interpreted:");
+			ft_putnbr(cmd_d->cmdid);
+			ft_putchar('\n');
 			bzero(send_str, 100);
-			putcommand_insendstr(command, send_str);
+			putcommand_insendstr(cmd_d->cmd, send_str);
 			bzero(recv_str, 100);
 			printf("client command being sent send_str: %s\n",  send_str);
 			send(comm_fd, send_str, strlen(send_str), 0);
 			recv(comm_fd, recv_str, 100, 0);
 			printf("server response: %s\n", recv_str);
-			ft_strdel(&command);
+			ft_putstr_fd(cmd_d->cmd, fd2);
+			ft_strdel(&cmd_d->cmd);
+			cmd_d->cmdid = 0;
+			cmd_d->papi = 0;
 		}
-//		ft_putstr("NINGUUU");
-//		fopen("speech.txt", "w");
-		/*if (fgets(send_str, 50, stdin))
-		{
-			printf("com: %s\n", send_str);
-		}*/
-/*		if (parser(&command) == 1)
-		{
-			free(command);
-			command = NULL;
-		}*/
 		//Get string from listener
 		//If string
 		//	if client logic
