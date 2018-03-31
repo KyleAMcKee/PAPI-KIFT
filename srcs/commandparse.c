@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   commandparse.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/03/30 21:34:21 by nwang             #+#    #+#             */
+/*   Updated: 2018/03/30 21:37:40 by nwang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "papi.h"
 
 void	set_commandinfo(t_cmd *cmd_d, int cmdid, char *cmd)
@@ -14,13 +26,13 @@ void	is_command_3(t_cmd *cmd_d, char *user_in)
 		return (set_commandinfo(cmd_d, 21, "HOLA"));
 	if (ft_strstr("NICK CAGE", user_in))
 		return (set_commandinfo(cmd_d, 13, "NICK CAGE"));
-  if (ft_strstr("JOKE", user_in))
+	if (ft_strstr("JOKE", user_in))
 		return (set_commandinfo(cmd_d, 24, "JOKE"));
-  if (ft_strstr("QUE PASA", user_in))
+	if (ft_strstr("QUE PASA", user_in))
 		return (set_commandinfo(cmd_d, 12, "QUE PASA"));
-  if (ft_strstr("KIFTE", user_in))
+	if (ft_strstr("KIFTE", user_in))
 		return (set_commandinfo(cmd_d, 11, "KIFTE"));
-  if (ft_strstr("SET TIMER", user_in))
+	if (ft_strstr("SET TIMER", user_in))
 		return (set_commandinfo(cmd_d, 26, "SET TIMER"));
 }
 
@@ -28,22 +40,22 @@ void	is_command_2(t_cmd *cmd_d, char *user_in)
 {
 	if (ft_strstr("PLAY MUSIC", user_in))
 		return (set_commandinfo(cmd_d, 14, "PLAY MUSIC"));
-    if (ft_strstr("GOOGLE", user_in) || ft_strstr("SEARCH", user_in))
+	if (ft_strstr("GOOGLE", user_in) || ft_strstr("SEARCH", user_in))
 		return (set_commandinfo(cmd_d, 15, "GOOGLE"));
-    if (ft_strstr("GOOGLE DESPACITO", user_in))
+	if (ft_strstr("GOOGLE DESPACITO", user_in))
 		return (set_commandinfo(cmd_d, 16, "GOOGLE DESPACITO"));
-    if (ft_strstr("CHECK HISTORY", user_in))
-		return (set_commandinfo(cmd_d, 17, "CHECK HISTORY")); 
-    if (ft_strstr("LET DOGS", user_in))
-		return (set_commandinfo(cmd_d, 22, "LET DOGS"));   
+	if (ft_strstr("CHECK HISTORY", user_in))
+		return (set_commandinfo(cmd_d, 17, "CHECK HISTORY"));
+	if (ft_strstr("LET DOGS", user_in))
+		return (set_commandinfo(cmd_d, 22, "LET DOGS"));
 	if (ft_strstr("DESPACITO", user_in))
 		return (set_commandinfo(cmd_d, 23, "DESPACITO"));
-	//if (ft_strstr("EXIT", user_in) || ft_strstr("QUIT", user_in) || ft_strstr("GOODBYE", user_in))
+// add yes check
+	//if ft_strstr("QUIT", user_in) || ft_strstr("GOODBYE", user_in))
 	//	return (set_commandinfo(cmd_d, 18, "EXIT"));
 	if (ft_strstr("BUTTERHORN", user_in))
 		return (set_commandinfo(cmd_d, 19, "BUTTERHORN"));
 	is_command_3(cmd_d, user_in);
-	
 }
 
 void	is_command(t_cmd *cmd_d, char *user_in)

@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   client.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/03/30 21:57:00 by nwang             #+#    #+#             */
+/*   Updated: 2018/03/30 21:58:33 by nwang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "papi.h"
 
-t_cmd	*initialize()
+t_cmd		*initialize(void)
 {
 	t_cmd	*cmd_d;
 
@@ -11,19 +23,19 @@ t_cmd	*initialize()
 	return (cmd_d);
 }
 
-int main(void)
+int			main(void)
 {
-	int comm_fd;
-	char send_str[100];
-	char recv_str[100];
-	char port_str[100];
-	char *ret_ptr;
-	struct sockaddr_in info;
-	int	port;
-	int success;
-//	pid_t id;
-	pid_t id2;
-
+	int		comm_fd;
+	char	send_str[100];
+	char	recv_str[100];
+	char	port_str[100];
+	char	*ret_ptr;
+	struct	sockaddr_in info;
+	int		port;
+	int		success;
+	//	pid_t id;
+	pid_t	id2;
+	
 	id2 = fork();
 	if (id2 == 0)
 		execvp("./listener", NULL);
@@ -32,11 +44,9 @@ int main(void)
 	 ** Create a socket, use IPv4 (AF_INET), and specify the socket type (SOCK_STREAM)
 	 ** Zero out the struct and use IPv4
 	 */
-
 	comm_fd = socket(AF_INET, SOCK_STREAM, 0);
 	bzero(&info, sizeof(info));
 	info.sin_family = AF_INET;
-
 	/*
 	 ** Get port from user and verify that the port is valid
 	 */
@@ -48,11 +58,9 @@ int main(void)
 	if (id2 == 0)
 		execvp("./listener", NULL);
 	sleep(3);
-
-
 	/*printf("Gimme a port, plz: ");
-	fgets(port_str, 100, stdin);
-	port = strtol(port_str, &ret_ptr, 10);*/
+	  fgets(port_str, 100, stdin);
+	  port = strtol(port_str, &ret_ptr, 10);*/
 	while (port == 0)
 	{
 		printf("Invalid input: %sInput as integer only try again: ", port_str);
@@ -67,12 +75,10 @@ int main(void)
 		port = strtol(port_str, &ret_ptr, 10);
 	}
 	printf("That's a great port! Let's connect!\n");
-
 	/*
 	 **	Add port to struct along with IP in binary format
 	 **	If connection was successful let user know and allow sending of information
 	 */
-
 	info.sin_port = htons(port);
 	inet_pton(AF_INET, "127.0.0.1", &(info.sin_addr));
 	success = connect(comm_fd, (struct sockaddr*)&info, sizeof(info));
@@ -80,9 +86,9 @@ int main(void)
 		printf("Connected to server\n");
 	else
 		printf("Couldn't connect to server\n");
-	int fd;
-	int fd2;
-	t_cmd *cmd_d;
+	int		fd;
+	int		fd2;
+	t_cmd	*cmd_d;
 
 	fd = open("speech.txt", O_RDONLY);
 	fd2 = open("response.txt", O_RDWR | O_TRUNC | O_CREAT);
