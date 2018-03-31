@@ -6,7 +6,7 @@
 /*   By: kmckee <kmckee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 16:40:00 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/30 18:01:13 by kmckee           ###   ########.fr       */
+/*   Updated: 2018/03/30 21:33:21 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,49 +40,51 @@
 # define C_WHT      "\x1b[37m"
 # define C_RESET    "\x1b[0m"
 
-typedef struct	s_cmd
+typedef struct		s_cmd
 {
-	int		cmdid;
-	int		papi;
-	char	*cmd;
-}			t_cmd;
+	int				cmdid;
+	int				papi;
+	char			*cmd;
+}					t_cmd;
 
-void     parser(int fd, t_cmd *cmd_d);
+void				parser(int fd, t_cmd *cmd_d);
+void				is_command(t_cmd *cmd_d, char *user_in);
+void				putcommand_insendstr(char *cmd, char send_str[]);
+int					validstr(char *line);
 
-void    is_command(t_cmd *cmd_d, char *user_in);
+/*
+** command interpreter
+*/
+void				commands(int com);
 
-void	putcommand_insendstr(char *cmd, char send_str[]);
-int 	validstr(char *line);
-
-//command interpreter
-void		commands(int com);
-
-//command actions
-void	set_alarm(void);
-void	set_timer(void);
-void	kifte(void);
-void	where_kyle(void);
-void	lights_on(void);
-void	lights_off(void);
-void	send_email(void);
-void	check_events(void);
-void	check_weather(void);
-void	check_traffic(void);
-void	user_connected(void);
-void	where_connected(void);
-void	play_music(void);
-void	google(void);
-void	google_despacito(void);
-void	check_history(void);
-void	quit(void);
-void	butterhorn(void);
-void	shrek(void);
-void	hola(void);
-void	let_dogs_out(void);
-void	despacito(void);
-void	fuck_you(void);
-void	joke(void);
-void	nic_cage(void);
-void	que_pasa(void);
+/*
+** command actions
+*/
+void				set_alarm(void);
+void				set_timer(void);
+void				kifte(void);
+void				where_kyle(void);
+void				lights_on(void);
+void				lights_off(void);
+void				send_email(void);
+void				check_events(void);
+void				check_weather(void);
+void				check_traffic(void);
+void				user_connected(void);
+void				where_connected(void);
+void				play_music(void);
+void				google(void);
+void				google_despacito(void);
+void				check_history(void);
+void				quit(void);
+void				butterhorn(void);
+void				shrek(void);
+void				hola(void);
+void				let_dogs_out(void);
+void				despacito(void);
+void				fuck_you(void);
+void				joke(void);
+void				nic_cage(void);
+void				que_pasa(void);
 
 #endif
