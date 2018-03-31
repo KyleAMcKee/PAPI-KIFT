@@ -1,15 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "libft/libft.h"
-#include <fcntl.h>
-#include <sys/types.h>
-
-typedef struct	s_cmd
-{
-	int		cmdid;
-	int		papi;
-	char	*cmd;
-}			t_cmd;
+#include "papi.h"
 
 int execute_command(char *str)
 {
@@ -40,7 +29,6 @@ int validstr(char *line)
 void	parser(int fd, t_cmd *cmd_d)
 {
 	char *user_in;
-	char *tmp;
 
 	user_in = NULL;
 	get_next_line(fd, &user_in);

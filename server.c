@@ -1,11 +1,4 @@
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netdb.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include "libft/libft.h"
+#include "papi.h"
 
 int validstr(char line[])
 {
