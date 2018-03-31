@@ -1,3 +1,5 @@
+#include "papi.h"
+
 void	set_commandinfo(t_cmd *cmd_d, int cmdid, char *cmd)
 {
 	cmd_d->cmdid = cmdid;

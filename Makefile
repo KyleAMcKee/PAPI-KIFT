@@ -3,7 +3,8 @@ SERVER = server
 LISTENER = listener
 LIBFT = ./libft/libft.a
 CLIENTFILES = 	./client.c \
-				./parser.c 
+				./parser.c \
+				./commandparse.c
 SERVERFILES = 	./server.c
 LISTENFILES =	./listener.c
 LIBDIR = ./libft/

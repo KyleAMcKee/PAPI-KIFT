@@ -1,20 +1,4 @@
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netdb.h>
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <arpa/inet.h>
-#include "libft/libft.h"
-
-typedef struct	s_cmd
-{
-	int		cmdid;
-	int		papi;
-	char	*cmd;
-}			t_cmd;
-
-int	parser(int fd, t_cmd *cmd_d);
+#include "papi.h"
 
 void	putcommand_insendstr(char *cmd, char send_str[])
 {
