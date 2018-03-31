@@ -1,7 +1,0 @@
-mail -s "Papi sends mail" "nick_s_wang@hotmail.com" <<EOF
-	Ay, cabron.
-	Here is some mail for you!
-	Hasta luego.
-
-	Con amor,
-	-Papi

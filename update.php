@@ -1,5 +1,5 @@
 <?php
-	$speech = file_get_contents("speech.txt");
+	$speech = file_get_contents("response.txt");
     $speech = explode("\n", $speech);
     foreach ($speech as $item)
     {
