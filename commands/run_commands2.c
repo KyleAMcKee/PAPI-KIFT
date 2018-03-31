@@ -6,12 +6,11 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:38:43 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/29 18:50:38 by nwang            ###   ########.fr       */
+/*   Updated: 2018/03/30 17:09:55 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
+#include "papi.h"
 
 void	lights_on(void)
 {
