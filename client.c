@@ -1,14 +1,14 @@
 #include "papi.h"
 
-void	putcommand_insendstr(char *cmd, char send_str[])
+t_cmd	*initialize()
 {
-	int i;
-	int j;
+	t_cmd	*cmd_d;
 
-	i = -1;
-	j = 0;
-	while (cmd[++i])
-		send_str[j++] = cmd[i];
+	cmd_d = (t_cmd *)malloc(sizeof(t_cmd));
+	cmd_d->cmdid = 0;
+	cmd_d->cmd = NULL;
+	cmd_d->papi = 0;
+	return (cmd_d);
 }
 
 int main(void)
@@ -24,9 +24,6 @@ int main(void)
 //	pid_t id;
 	pid_t id2;
 
-/*	id = fork();
-	if (id == 0)
-		execvp("./exec", NULL);*/
 	id2 = fork();
 	if (id2 == 0)
 		execvp("./listener", NULL);
@@ -85,14 +82,11 @@ int main(void)
 		printf("Couldn't connect to server\n");
 	int fd;
 	int fd2;
+	t_cmd *cmd_d;
 
 	fd = open("speech.txt", O_RDONLY);
 	fd2 = open("response.txt", O_RDWR | O_TRUNC | O_CREAT);
-	t_cmd *cmd_d;
-	cmd_d = (t_cmd *)malloc(sizeof(t_cmd));
-	cmd_d->cmdid = 0;
-	cmd_d->cmd = NULL;
-	cmd_d->papi = 0;
+	cmd_d = initialize();
 	fopen("speech.txt", "w");
 	system("open http://localhost:3873/index.php");
 	while (1)
@@ -110,21 +104,13 @@ int main(void)
 			send(comm_fd, send_str, strlen(send_str), 0);
 			recv(comm_fd, recv_str, 100, 0);
 			printf("server response: %s\n", recv_str);
+			commands(cmd_d->cmdid);
 			ft_putstr_fd(cmd_d->cmd, fd2);
 			write(fd2, "\n", 1);
 			ft_strdel(&cmd_d->cmd);
 			cmd_d->cmdid = 0;
 			cmd_d->papi = 0;
 		}
-		//Get string from listener
-		//If string
-		//	if client logic
-		//		pass to client logic handler
-		//	else if server logic
-		//		send to server
-		//		wait for response
-		//	else
-		//		command not valid
-		//	flush send / recv string
 	}
+	free(cmd_d);
 }

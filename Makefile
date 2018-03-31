@@ -4,7 +4,16 @@ LISTENER = listener
 LIBFT = ./libft/libft.a
 CLIENTFILES = 	./client.c \
 				./parser.c \
-				./commandparse.c
+				./papi_utilities \
+				./commandparse.c \
+				./commands/commands.c \
+				./comands/run_commands.c \
+				./comands/run_commands2.c \
+				./comands/run_commands3.c \
+				./comands/run_commands4.c \
+				./comands/run_commands5.c \
+				./comands/run_commands6.c
+
 SERVERFILES = 	./server.c
 LISTENFILES =	./listener.c
 LIBDIR = ./libft/
