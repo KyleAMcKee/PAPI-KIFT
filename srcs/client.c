@@ -85,10 +85,6 @@ int			main(void)
 	int		success;
 	pid_t	id2;
 
-	/*
-	 ** Create a socket, use IPv4 (AF_INET), and specify the socket type (SOCK_STREAM)
-	 ** Zero out the struct and use IPv4
-	 */
 	comm_fd = socket(AF_INET, SOCK_STREAM, 0);
 	bzero(&info, sizeof(info));
 	info.sin_family = AF_INET;
@@ -96,10 +92,6 @@ int			main(void)
 	if (id2 == 0)
 		execvp("./listener", NULL);
 	sleep(3);
-	/*
-	 **	Add port to struct along with IP in binary format
-	 **	If connection was successful let user know and allow sending of information
-	 */
 	port = establish_port();
 	info.sin_port = htons(port);
 	inet_pton(AF_INET, "127.0.0.1", &(info.sin_addr));
