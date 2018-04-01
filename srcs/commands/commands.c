@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:14:10 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/30 17:08:32 by nwang            ###   ########.fr       */
+/*   Updated: 2018/04/01 16:27:14 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void		commands3(int com)
 		que_pasa();
 	else if (com == 11)
 		kifte();
-	if (com == 26)
+	else if (com == 26)
 		set_timer();
 }
 
