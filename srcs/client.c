@@ -12,17 +12,6 @@
 
 #include "papi.h"
 
-t_cmd		*initialize(void)
-{
-	t_cmd	*cmd_d;
-
-	cmd_d = (t_cmd *)malloc(sizeof(t_cmd));
-	cmd_d->cmdid = 0;
-	cmd_d->cmd = NULL;
-	cmd_d->papi = 0;
-	return (cmd_d);
-}
-
 int			establish_port()
 {
 	char	port_str[100];

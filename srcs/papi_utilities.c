@@ -23,3 +23,14 @@ int validstr(char *line)
 	}
 	return (0);
 }
+
+t_cmd		*initialize(void)
+{
+	t_cmd	*cmd_d;
+
+	cmd_d = (t_cmd *)malloc(sizeof(t_cmd));
+	cmd_d->cmdid = 0;
+	cmd_d->cmd = NULL;
+	cmd_d->papi = 0;
+	return (cmd_d);
+}

@@ -51,6 +51,7 @@ void				parser(int fd, t_cmd *cmd_d);
 void				is_command(t_cmd *cmd_d, char *user_in);
 void				putcommand_insendstr(char *cmd, char send_str[]);
 int					validstr(char *line);
+t_cmd				*initialize(void);
 
 /*
 ** command interpreter
