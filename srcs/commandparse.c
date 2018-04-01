@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 21:34:21 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/30 21:37:40 by nwang            ###   ########.fr       */
+/*   Updated: 2018/04/01 16:11:28 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,12 @@ void	is_command_2(t_cmd *cmd_d, char *user_in)
 		return (set_commandinfo(cmd_d, 22, "LET DOGS"));
 	if (ft_strstr("DESPACITO", user_in))
 		return (set_commandinfo(cmd_d, 23, "DESPACITO"));
-// add yes check
-	//if ft_strstr("QUIT", user_in) || ft_strstr("GOODBYE", user_in))
-	//	return (set_commandinfo(cmd_d, 18, "EXIT"));
+	if (ft_strstr("QUIT", user_in) || ft_strstr("GOODBYE", user_in))
+	{
+		printf("Are you sure you want to quit?");
+		if (ft_strstr("YES", user_in))
+			return (set_commandinfo(cmd_d, 18, "EXIT"));
+	}
 	if (ft_strstr("BUTTERHORN", user_in))
 		return (set_commandinfo(cmd_d, 19, "BUTTERHORN"));
 	is_command_3(cmd_d, user_in);
