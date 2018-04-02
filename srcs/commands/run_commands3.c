@@ -6,7 +6,7 @@
 /*   By: kmckee <kmckee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:38:43 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/30 18:19:58 by kmckee           ###   ########.fr       */
+/*   Updated: 2018/04/01 21:50:37 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ void	where_connected(void)
 void	play_music(void)
 {
 	system("say -v Juan Here are some tunes");
-	system("play srcs/commands/all_star.mp3");
+	system("play srcs/commands/all_star.mp3 &");
+	sleep(10);
+	system("pkill play all_star.mp3");
 }
 
 void	google(void)
