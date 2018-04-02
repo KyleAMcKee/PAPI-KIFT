@@ -6,7 +6,7 @@
 /*   By: kmckee <kmckee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 16:40:00 by nwang             #+#    #+#             */
-/*   Updated: 2018/04/01 21:21:19 by nwang            ###   ########.fr       */
+/*   Updated: 2018/04/02 15:11:57 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ void				is_command(t_cmd *cmd_d, char *user_in);
 void				putcommand_insendstr(char *cmd, char send_str[]);
 int					validstr(char *line);
 t_cmd				*initialize(void);
+void				quit_check(int fd, t_cmd *cmd_d);
+void				papi_initialized(void);
 
 /*
 ** command interpreter

@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 21:34:21 by nwang             #+#    #+#             */
-/*   Updated: 2018/04/01 21:30:21 by nwang            ###   ########.fr       */
+/*   Updated: 2018/04/02 14:51:04 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	is_command_2(t_cmd *cmd_d, char *user_in)
 		return (set_commandinfo(cmd_d, 23, "DESPACITO"));
 	if (ft_strstr("QUIT", user_in) || ft_strstr("GOODBYE", user_in))
 	{
-		cmd_d->quit  = 1;
+		cmd_d->quit = 1;
 		return (set_commandinfo(cmd_d, 18, "EXIT"));
 	}
 	if (ft_strstr("BUTTERHORN", user_in))

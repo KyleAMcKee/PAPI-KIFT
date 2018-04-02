@@ -6,15 +6,15 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 21:53:21 by nwang             #+#    #+#             */
-/*   Updated: 2018/04/02 14:48:04 by nwang            ###   ########.fr       */
+/*   Updated: 2018/04/02 15:38:12 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "papi.h"
 
-int				validstr(char line[])
+int						validstr(char line[])
 {
-	int			i;
+	int					i;
 
 	i = -1;
 	while (line[++i])
@@ -26,28 +26,20 @@ int				validstr(char line[])
 	return (0);
 }
 
-int				main(void)
+int						main(void)
 {
+	char				str[100];
+	int					sock;
+	int					comm_fd;
+	char				port_in[100];
+	char				*ret_ptr;
+	int					port;
+	struct sockaddr_in	info;
 
-	char		str[100];
-	int			sock;
-	int			comm_fd; 
-	char		port_in[100];
-	char		*ret_ptr;
-	int			port;
-	struct		sockaddr_in info;
-
-	/*
-	 ** Create a socket, use IPv4 (AF_INET), and specify the socket type (SOCK_STEAM)
-	 ** Zero out the struct and set necessary values -- htons converts from big to little endian (host to network)
-	 */	
 	sock = socket(AF_INET, SOCK_STREAM, 0);
 	bzero(&info, sizeof(info));
 	info.sin_family = AF_INET;
 	info.sin_addr.s_addr = htons(INADDR_ANY);
-	/* 
-	 ** Get port info from user and verify that input is an integer / in the correct port range
-	 */
 	printf("Quiero un puerto, mi amigo: ");
 	fgets(port_in, 100, stdin);
 	port = strtol(port_in, &ret_ptr, 10);
@@ -65,46 +57,23 @@ int				main(void)
 		port = strtol(port_in, &ret_ptr, 10);
 	}
 	printf("Muy bien, that's a good one\n");
-	printf("Listening on port: %i\n", port);
-	/*
-	 ** Put port into struct
-	 ** Bind() associates port with local machine and listen() waits for an incoming connection with the same port
-	 ** Accept returns an fd to be used to commmunicate with the server	
-	 */
+	printf("Escuchando en puerto: %i\n", port);
 	info.sin_port = htons(port);
-	bind(sock, (struct sockaddr*) &info, sizeof(info));
+	bind(sock, (struct sockaddr*)&info, sizeof(info));
 	listen(sock, 5);
-	comm_fd = accept(sock, (struct sockaddr*) NULL, NULL);
+	comm_fd = accept(sock, (struct sockaddr*)NULL, NULL);
 	if (comm_fd)
-		printf("Client connected to server on port: %i\n", port); 
-	/*
-	 ** While loop constantly checks for information being sent by client and replies accordingly
-	 */
-	//	int command;
+		printf("Client connected to server on port: %i\n", port);
 	while (1)
-	{ 
+	{
 		bzero(str, 100);
 		recv(comm_fd, str, 100, 0);
-		//		if (strlen(str))
-		//			command = atoi(str);
-		//if (command == 1)
-		//	system("open https://www.google.com");
-		//if (strcmp(str, "\n") != 0)
 		if (validstr(str))
 		{
 			ft_putstr("String received in server: ");
 			ft_putstr(str);
 			ft_putchar('\n');
 		}
-		//if (strcmp(str, "ping\n") == 0)
-		// 	send(comm_fd, "pong\npong\n", 11, 0);
-		//	else if (strcmp(str, "shutdown\n") == 0)
-		//		{
-		//			printf("Shutting down server and closing connection\n");
-		//			close(comm_fd);
-		//			exit(1);
-		//		}
 		send(comm_fd, str, strlen(str), 0);
-		//		command = 0;
 	}
 }
