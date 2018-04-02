@@ -30,15 +30,15 @@ $(LIBFT):
 
 $(CLIENT):
 	@gcc $(FLAGS) $(CFILES) $(LIBFT) -I $(INCDIR) -o $(CLIENT)
-	@echo "PAPI CLIENT COMPILED!"
+	@echo "\x1b[32m""PAPI ""\x1b[37m""CLIENT ""\x1b[31m""COMPILED!""\x1b[0m"
 
 $(SERVER):
 	@gcc $(FLAGS) $(SERVERFILES) $(LIBFT) -I $(INCDIR) -o $(SERVER)
-	@echo "PAPI SERVER COMPILED!"
+	@echo "\x1b[32m""PAPI ""\x1b[37m""SERVER ""\x1b[31m""COMPILED!""\x1b[0m"
 
 $(LISTENER):
 	@gcc $(FLAGS) $(LISTENFILES) $(LIBFT) -I $(INCDIR) -o $(LISTENER)
-	@echo "PAPI LISTENER COMPILED!"
+	@echo "\x1b[32m""PAPI ""\x1b[37m""LISTENER ""\x1b[31m""COMPILED!""\x1b[0m"
 
 clean:
 	@rm -rf $(OBJDIR)
