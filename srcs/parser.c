@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 21:52:42 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/30 21:53:05 by nwang            ###   ########.fr       */
+/*   Updated: 2018/04/02 14:44:50 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	parser(int fd, t_cmd *cmd_d)
 	get_next_line(fd, &user_in);
 	if (user_in && !ft_strcmp("PAPI", user_in))
 	{
-		ft_putstr("PAPI DETECTED\n");
+		ft_putstr("PAPI IS LISTENING\n");
 		cmd_d->papi = 1;
 	}
 	if (cmd_d->papi > 0 && user_in && validstr(user_in))

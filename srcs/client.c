@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 21:57:00 by nwang             #+#    #+#             */
-/*   Updated: 2018/04/01 16:02:19 by dmontoya         ###   ########.fr       */
+/*   Updated: 2018/04/02 14:47:38 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int			establish_port()
 	char	*ret_ptr;
 	int		port;
 
-	printf("Gimme a port, plz: ");
+	printf("Quiero un puerto, por favor: ");
 	fgets(port_str, 100, stdin);
 	port = strtol(port_str, &ret_ptr, 10);
 	while (port == 0)
@@ -34,7 +34,7 @@ int			establish_port()
 		fgets(port_str, 100, stdin);
 		port = strtol(port_str, &ret_ptr, 10);
 	}
-	printf("That's a great port! Let's connect!\n");
+	printf("Muy Bien! Let's connect!\n");
 	return (port);
 }
 
@@ -109,7 +109,10 @@ int			main(void)
 	inet_pton(AF_INET, "127.0.0.1", &(info.sin_addr));
 	success = connect(comm_fd, (struct sockaddr*)&info, sizeof(info));
 	if (success == 0)
+	{
 		printf("Connected to server\n");
+		system("say -v Juan Hola amigo, Papi intialized");
+	}
 	else
 		printf("Couldn't connect to server\n");
 	kifte_client(comm_fd);

@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 21:53:21 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/30 21:56:44 by nwang            ###   ########.fr       */
+/*   Updated: 2018/04/02 14:48:04 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int				main(void)
 	/* 
 	 ** Get port info from user and verify that input is an integer / in the correct port range
 	 */
-	printf("Gimme a port, friend: ");
+	printf("Quiero un puerto, mi amigo: ");
 	fgets(port_in, 100, stdin);
 	port = strtol(port_in, &ret_ptr, 10);
 	while (port == 0)
@@ -64,7 +64,7 @@ int				main(void)
 		fgets(port_in, 100, stdin);
 		port = strtol(port_in, &ret_ptr, 10);
 	}
-	printf("Mmmmm, that's a good one\n");
+	printf("Muy bien, that's a good one\n");
 	printf("Listening on port: %i\n", port);
 	/*
 	 ** Put port into struct
