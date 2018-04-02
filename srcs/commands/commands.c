@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:14:10 by nwang             #+#    #+#             */
-/*   Updated: 2018/04/01 16:27:14 by nwang            ###   ########.fr       */
+/*   Updated: 2018/04/01 21:20:10 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void		commands2(int com)
 	else if (com == 15)
 		google();
 	else if (com == 16)
-		google_despacito();
+		google_dagoberto();
 	else if (com == 17)
 		check_history();
 	else if (com == 18)

@@ -6,7 +6,7 @@
 /*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 21:34:21 by nwang             #+#    #+#             */
-/*   Updated: 2018/04/01 16:11:28 by nwang            ###   ########.fr       */
+/*   Updated: 2018/04/01 21:30:21 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	is_command_3(t_cmd *cmd_d, char *user_in)
 		return (set_commandinfo(cmd_d, 24, "JOKE"));
 	if (ft_strstr("QUE PASA", user_in))
 		return (set_commandinfo(cmd_d, 12, "QUE PASA"));
-	if (ft_strstr("KIFTE", user_in))
-		return (set_commandinfo(cmd_d, 11, "KIFTE"));
+	if (ft_strstr("KIFTAY", user_in))
+		return (set_commandinfo(cmd_d, 11, "KIFTAY"));
 	if (ft_strstr("SET TIMER", user_in))
 		return (set_commandinfo(cmd_d, 26, "SET TIMER"));
 }
@@ -42,8 +42,8 @@ void	is_command_2(t_cmd *cmd_d, char *user_in)
 		return (set_commandinfo(cmd_d, 14, "PLAY MUSIC"));
 	if (ft_strstr("GOOGLE", user_in) || ft_strstr("SEARCH", user_in))
 		return (set_commandinfo(cmd_d, 15, "GOOGLE"));
-	if (ft_strstr("GOOGLE DESPACITO", user_in))
-		return (set_commandinfo(cmd_d, 16, "GOOGLE DESPACITO"));
+	if (ft_strstr("GOOGLE DAGOBERTO", user_in))
+		return (set_commandinfo(cmd_d, 16, "GOOGLE DAGOBERTO"));
 	if (ft_strstr("CHECK HISTORY", user_in))
 		return (set_commandinfo(cmd_d, 17, "CHECK HISTORY"));
 	if (ft_strstr("LET DOGS", user_in))

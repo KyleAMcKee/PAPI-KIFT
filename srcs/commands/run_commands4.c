@@ -6,16 +6,16 @@
 /*   By: kmckee <kmckee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:38:43 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/30 18:20:59 by kmckee           ###   ########.fr       */
+/*   Updated: 2018/04/01 21:20:47 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "papi.h"
 
-void	google_despacito(void)
+void	google_dagoberto(void)
 {
 	system("say -v Juan Ay, Ay, Ay, Papi!");
-	system("open https://www.google.com/search?q=despacito");
+	system("open https://www.google.com/search?q=dagoberto");
 }
 
 void	check_history(void)

@@ -6,7 +6,7 @@
 /*   By: kmckee <kmckee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 16:40:00 by nwang             #+#    #+#             */
-/*   Updated: 2018/03/30 21:33:21 by nwang            ###   ########.fr       */
+/*   Updated: 2018/04/01 21:21:19 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void				user_connected(void);
 void				where_connected(void);
 void				play_music(void);
 void				google(void);
-void				google_despacito(void);
+void				google_dagoberto(void);
 void				check_history(void);
 void				quit(void);
 void				butterhorn(void);
