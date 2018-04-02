@@ -8,16 +8,18 @@
         var auto_refresh = setInterval(
         function ()
         {
+            $('#response').animate({scrollTop: response.scrollHeight},"fast");
             $('#response').load('update.php').fadeIn("slow");
-        },  2500); // refresh every 2500 milliseconds
+        },  2500);
     </script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
     <script type="text/javascript">
         var auto_refresh = setInterval(
         function ()
         {
+            $('#server').animate({scrollTop: server.scrollHeight},"fast");
             $('#server').load('server.php').fadeIn("slow");
-        },  2500); // refresh every 2500 milliseconds
+        },  2500);
     </script>
 <body>
 <div class="wrapper">
