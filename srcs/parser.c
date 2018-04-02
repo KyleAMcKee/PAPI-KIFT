@@ -12,14 +12,33 @@
 
 #include "papi.h"
 
+int		exit_response(int fd, t_cmd *cmd_d)
+{
+	char *user_in;
+
+	user_in = NULL;
+	get_next_line(fd, &user_in);
+	if (user_in && !ft_strcmp("NO", user_in))
+	{
+		cmd_d->quit = 0;
+		return (1);
+	}
+	if (user_in && !ft_strcmp("YES", user_in))
+		quit();
+	return (0);
+}
+
 void	parser(int fd, t_cmd *cmd_d)
 {
 	char *user_in;
 
 	user_in = NULL;
 	get_next_line(fd, &user_in);
-	if (user_in && ft_strstr("PAPI", user_in))
+	if (user_in && !ft_strcmp("PAPI", user_in))
+	{
+		ft_putstr("PAPI DETECTED\n");
 		cmd_d->papi = 1;
+	}
 	if (cmd_d->papi > 0 && user_in && validstr(user_in))
 	{
 		is_command(cmd_d, user_in);

@@ -27,6 +27,8 @@ void	check_history(void)
 void	quit(void)
 {
 	system("say -v Juan Adios, mi amigo");
+	system("pkill pocketsphinx_continuous");
+	system("pkill server");
 	exit(0);
 }
 

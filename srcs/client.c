@@ -49,13 +49,26 @@ void		kifte_client(int comm_fd)
 	fd = open("speech.txt", O_RDONLY);
 	fd2 = open("response.txt", O_RDWR | O_TRUNC | O_CREAT);
 	cmd_d = initialize();
+	ft_putnbr(cmd_d->papi);
+	write(1, "\n", 1);
 	fopen("speech.txt", "w");
 	system("open http://localhost:3873/index.php");
 	while (1)
 	{
 		parser(fd, cmd_d);
+		if (cmd_d->quit == 1)
+		{
+			ft_strdel(&cmd_d->cmd);
+			cmd_d->papi = 0;
+			cmd_d->cmdid = 0;
+			system("say -v Juan Are you sure you want to quit?");
+			while (!exit_response(fd, cmd_d))
+			{
+			}
+		}
 		if (cmd_d->cmdid > 0 && cmd_d->papi == 1)
 		{
+			cmd_d->papi = 0;
 			ft_putstr("command interpreted:");
 			ft_putnbr(cmd_d->cmdid);
 			ft_putchar('\n');
@@ -71,7 +84,6 @@ void		kifte_client(int comm_fd)
 			write(fd2, "\n", 1);
 			ft_strdel(&cmd_d->cmd);
 			cmd_d->cmdid = 0;
-			cmd_d->papi = 0;
 		}
 	}
 	free(cmd_d);

@@ -52,9 +52,8 @@ void	is_command_2(t_cmd *cmd_d, char *user_in)
 		return (set_commandinfo(cmd_d, 23, "DESPACITO"));
 	if (ft_strstr("QUIT", user_in) || ft_strstr("GOODBYE", user_in))
 	{
-		printf("Are you sure you want to quit?");
-		if (ft_strstr("YES", user_in))
-			return (set_commandinfo(cmd_d, 18, "EXIT"));
+		cmd_d->quit  = 1;
+		return (set_commandinfo(cmd_d, 18, "EXIT"));
 	}
 	if (ft_strstr("BUTTERHORN", user_in))
 		return (set_commandinfo(cmd_d, 19, "BUTTERHORN"));

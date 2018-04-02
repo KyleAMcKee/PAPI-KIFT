@@ -44,10 +44,12 @@ typedef struct		s_cmd
 {
 	int				cmdid;
 	int				papi;
+	int				quit;
 	char			*cmd;
 }					t_cmd;
 
 void				parser(int fd, t_cmd *cmd_d);
+int					exit_response(int fd, t_cmd *cmd_d);
 void				is_command(t_cmd *cmd_d, char *user_in);
 void				putcommand_insendstr(char *cmd, char send_str[]);
 int					validstr(char *line);

@@ -32,5 +32,6 @@ t_cmd		*initialize(void)
 	cmd_d->cmdid = 0;
 	cmd_d->cmd = NULL;
 	cmd_d->papi = 0;
+	cmd_d->quit = 0;
 	return (cmd_d);
 }
