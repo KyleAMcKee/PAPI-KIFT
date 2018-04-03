@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   papi_utilities.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: kmckee <kmckee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/02 14:51:33 by nwang             #+#    #+#             */
-/*   Updated: 2018/04/02 15:27:57 by nwang            ###   ########.fr       */
+/*   Updated: 2018/04/02 22:10:07 by kmckee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,9 @@ void		quit_check(int fd, t_cmd *cmd_d)
 	cmd_d->papi = 0;
 	cmd_d->cmdid = 0;
 	system("say -v Juan Are you sure you want to quit?");
-	printf("Are you sure you want to quit? (Yes/No)");
 	while (!exit_response(fd, cmd_d))
 	{
 	}
-}
-
-void		papi_initialized(void)
-{
-	printf("Connected to server\n");
-	system("say -v Juan Hola amigo, Papi initialized");
 }
 
 int			validstr(char *line)
@@ -55,14 +48,27 @@ int			validstr(char *line)
 	return (0);
 }
 
-t_cmd		*initialize(void)
+t_cmd		*initialize(int *fd, int *fd2)
 {
 	t_cmd	*cmd_d;
 
+	printf("Connected to server\n");
+	system("say -v Juan Hola amigo, Papi initialized");
+	*fd = open("speech.txt", O_RDONLY);
+	*fd2 = open("response.txt", O_RDWR | O_TRUNC | O_CREAT);
+	system("open http://localhost:3873/index.php");
 	cmd_d = (t_cmd *)malloc(sizeof(t_cmd));
 	cmd_d->cmdid = 0;
 	cmd_d->cmd = NULL;
 	cmd_d->papi = 0;
 	cmd_d->quit = 0;
+	fopen("speech.txt", "w");
 	return (cmd_d);
+}
+
+void		reset_papi(t_cmd *cmd_d)
+{
+	cmd_d->papi = 0;
+	ft_strdel(&cmd_d->cmd);
+	cmd_d->cmdid = 0;
 }

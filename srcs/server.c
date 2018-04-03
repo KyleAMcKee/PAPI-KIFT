@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: kmckee <kmckee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 21:53:21 by nwang             #+#    #+#             */
-/*   Updated: 2018/04/02 15:38:12 by nwang            ###   ########.fr       */
+/*   Updated: 2018/04/02 21:44:09 by kmckee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,12 @@ int						validstr(char line[])
 	return (0);
 }
 
-int						main(void)
+int						get_server_port(void)
 {
-	char				str[100];
-	int					sock;
-	int					comm_fd;
 	char				port_in[100];
 	char				*ret_ptr;
 	int					port;
-	struct sockaddr_in	info;
 
-	sock = socket(AF_INET, SOCK_STREAM, 0);
-	bzero(&info, sizeof(info));
-	info.sin_family = AF_INET;
-	info.sin_addr.s_addr = htons(INADDR_ANY);
 	printf("Quiero un puerto, mi amigo: ");
 	fgets(port_in, 100, stdin);
 	port = strtol(port_in, &ret_ptr, 10);
@@ -58,22 +50,34 @@ int						main(void)
 	}
 	printf("Muy bien, that's a good one\n");
 	printf("Escuchando en puerto: %i\n", port);
+	return (port);
+}
+
+int						main(void)
+{
+	char				str[100];
+	int					sock;
+	int					comm_fd;
+	int					port;
+	struct sockaddr_in	info;
+
+	sock = socket(AF_INET, SOCK_STREAM, 0);
+	bzero(&info, sizeof(info));
+	info.sin_family = AF_INET;
+	info.sin_addr.s_addr = htons(INADDR_ANY);
+	port = get_server_port();
 	info.sin_port = htons(port);
 	bind(sock, (struct sockaddr*)&info, sizeof(info));
 	listen(sock, 5);
-	comm_fd = accept(sock, (struct sockaddr*)NULL, NULL);
-	if (comm_fd)
+	if ((comm_fd = accept(sock, (struct sockaddr*)NULL, NULL)))
 		printf("Client connected to server on port: %i\n", port);
 	while (1)
 	{
 		bzero(str, 100);
 		recv(comm_fd, str, 100, 0);
 		if (validstr(str))
-		{
-			ft_putstr("String received in server: ");
-			ft_putstr(str);
-			ft_putchar('\n');
-		}
+			printf("String received in server: %s\n", str);
 		send(comm_fd, str, strlen(str), 0);
 	}
+	return (0);
 }

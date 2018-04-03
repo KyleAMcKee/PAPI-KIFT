@@ -6,7 +6,7 @@
 /*   By: kmckee <kmckee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:38:43 by nwang             #+#    #+#             */
-/*   Updated: 2018/04/01 21:20:47 by nwang            ###   ########.fr       */
+/*   Updated: 2018/04/02 21:34:37 by kmckee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	quit(void)
 {
 	system("say -v Juan Adios, mi amigo");
 	system("pkill pocketsphinx_continuous");
-	system("pkill server");
 	exit(0);
 }
 

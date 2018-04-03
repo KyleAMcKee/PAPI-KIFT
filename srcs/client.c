@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: kmckee <kmckee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 21:57:00 by nwang             #+#    #+#             */
-/*   Updated: 2018/04/02 15:26:03 by nwang            ###   ########.fr       */
+/*   Updated: 2018/04/02 22:01:11 by kmckee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,30 +46,22 @@ void					kifte_client(int comm_fd)
 	char				recv_str[100];
 	t_cmd				*cmd_d;
 
-	fd = open("speech.txt", O_RDONLY);
-	fd2 = open("response.txt", O_RDWR | O_TRUNC | O_CREAT);
-	cmd_d = initialize();
-	fopen("speech.txt", "w");
-	system("open http://localhost:3873/index.php");
+	cmd_d = initialize(&fd, &fd2);
 	while (1)
 	{
 		parser(fd, cmd_d);
-		if (cmd_d->quit == 1)
-			quit_check(fd, cmd_d);
+		cmd_d->quit == 1 ? quit_check(fd, cmd_d) : 0;
 		if (cmd_d->cmdid > 0 && cmd_d->papi == 1)
 		{
-			cmd_d->papi = 0;
 			bzero(send_str, 100);
 			putcommand_insendstr(cmd_d->cmd, send_str);
 			bzero(recv_str, 100);
 			send(comm_fd, send_str, strlen(send_str), 0);
 			recv(comm_fd, recv_str, 100, 0);
-			printf("server response: %s\n", recv_str);
 			commands(cmd_d->cmdid);
 			ft_putstr_fd(cmd_d->cmd, fd2);
 			write(fd2, "\n", 1);
-			ft_strdel(&cmd_d->cmd);
-			cmd_d->cmdid = 0;
+			reset_papi(cmd_d);
 		}
 	}
 	free(cmd_d);
@@ -94,9 +86,7 @@ int						main(void)
 	info.sin_port = htons(port);
 	inet_pton(AF_INET, "127.0.0.1", &(info.sin_addr));
 	success = connect(comm_fd, (struct sockaddr*)&info, sizeof(info));
-	if (success == 0)
-		papi_initialized();
-	else
+	if (success != 0)
 		printf("Couldn't connect to server\n");
 	kifte_client(comm_fd);
 	return (0);
