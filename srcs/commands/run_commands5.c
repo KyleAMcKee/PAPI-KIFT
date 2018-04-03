@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   run_commands.c                                     :+:      :+:    :+:   */
+/*   run_commands5.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nwang <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: kmckee <kmckee@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 22:38:43 by nwang             #+#    #+#             */
-/*   Updated: 2018/04/01 21:27:00 by nwang            ###   ########.fr       */
+/*   Updated: 2018/04/02 22:59:46 by kmckee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ void	despacito(void)
 
 void	fuck_you(void)
 {
-	system("say -v Juan Ay, watch your fucking mouth puta");
+	system("say -v Juan Ay, watch your fucking mouth pendejo");
 }
